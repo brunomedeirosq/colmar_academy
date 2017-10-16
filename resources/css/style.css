@@ -1,0 +1,11 @@
+/* generic style to help layout */
+
+div {
+  border: 1px solid black;
+}
+
+/* generic common style applied to all content as default */
+
+html {
+
+}
