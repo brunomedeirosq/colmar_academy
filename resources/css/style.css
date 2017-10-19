@@ -1,6 +1,8 @@
 /* generic style to help layout - remove or comment */
 div,
-body {
+header,
+nav,
+section {
   border: 1px solid black;
 }
 
@@ -12,14 +14,7 @@ html {
   font-size: 16px;
 }
 
-/* generic main-frame to control padding over all content */
-body {
-  /* add 24px(relative to root font-size) padding top right bottom and left sides */
-  padding: 0px 24px 0px 24px;
-  padding: 0rem 1.5rem 0rem 1.5rem;
-}
-
-/* common display/layout properties and values shared for flexbox-containers */
+/* common display/layout properties and values shared by flexbox-containers */
 /* add CSS vendor prefixes through pleeease tool */
 .flexbox-container {
   display: -webkit-box;
@@ -37,19 +32,26 @@ body {
 
 /* MEDIA QUERIES STYLES---------------------------------------------------- */
 
-/* SPECIFIC STYLES--------------------------------------------------------- */
-
-/* style for header section including: logo and navigation */
+/* style for HEADER section including: logo and navigation */
 
 header {
-  width: 100%;
   height: 64px;
   height: 4rem;
+  background-color: #778899;
+  width: 100%;
+  position: fixed;
 }
 
 .logo {
   height: 32px;
   height: 2rem;
+  padding-left: 24px;
+  padding-left: 1.5rem;
+}
+
+nav {
+  padding-right: 24px;
+  padding-right: 1.5rem;
 }
 
 /* stackoverflow tip: use the negation pseudo-class :not() against the :last-child pseudo-class.
@@ -59,35 +61,91 @@ nav span:not(:last-child) {
   padding-right: 1rem;
 }
 
-/* style for banner section */
+/* main sections */
+
+/* generic style for BANNERS section */
 
 .banner {
-  padding: 32px 0px;
-  padding: 2rem 0rem;
+  background-color: #d3d3d3;
+  width: 100%;
   justify-content: flex-start;
+  padding-top: 32px;
+  padding-top: 2rem;
+  padding-bottom: 32px;
+  padding-bottom: 2rem;
 }
 
-.banner .left-content{
+/* style for BANNER-START section */
+
+/* to overlap generic banners paddings due to header height and fixed position */
+.banner-start {
+  padding-top: 96px;
+  padding-top: 6rem;
+}
+
+.banner-start .left-content{
   width: 60%;
   overflow: hidden;
+  padding-left: 24px;
+  padding-left: 1.5rem;
 }
 
-.banner .left-content img {
+.banner-start .left-content img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-.banner .right-content {
+.banner-start .right-content {
   padding-left: 24px;
   padding-left: 2rem;
+  width: 30%;
 }
 
-.banner .right-content .button {
-  background-color: grey;
+.banner-start .right-content .button {
+  background-color: #778899;
   color: white;
   border-radius: 5%;
   padding: 8px 0px;
   padding: 0.5rem 0rem;
   width: 100%
 }
+
+/* style for BANNER-INFO section */
+
+.banner-info .left-content {
+  width: 60%;
+  overflow: hidden;
+  padding-left: 24px;
+  padding-left: 1.5rem;
+}
+
+.banner-info .left-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner-info .left-content h2 {
+  padding-top: 32px;
+  padding-top: 2rem;
+  padding-bottom: 24px;
+  padding-bottom: 1.5rem;
+}
+
+.banner-info .left-content p:nth-child(0n+1) {
+  font-size: 2rem;
+}
+
+
+
+
+
+/* style for BANNER-COURSES section */
+
+
+
+
+
+
+/* style for BANNER-SHOWCASE section */
