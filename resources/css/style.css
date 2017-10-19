@@ -35,7 +35,6 @@ html {
 /* style for HEADER section including: logo and navigation */
 
 header {
-  height: 64px;
   height: 4rem;
   background-color: #778899;
   width: 100%;
@@ -43,21 +42,17 @@ header {
 }
 
 .logo {
-  height: 32px;
   height: 2rem;
-  padding-left: 24px;
   padding-left: 1.5rem;
 }
 
 nav {
-  padding-right: 24px;
   padding-right: 1.5rem;
 }
 
 /* stackoverflow tip: use the negation pseudo-class :not() against the :last-child pseudo-class.
 being introduced CSS Selectors Level 3 --> check and implement compatibility through Modernizr */
 nav span:not(:last-child) {
-  padding-right: 16px;
   padding-right: 1rem;
 }
 
@@ -69,25 +64,30 @@ nav span:not(:last-child) {
   background-color: #d3d3d3;
   width: 100%;
   justify-content: flex-start;
-  padding-top: 32px;
   padding-top: 2rem;
-  padding-bottom: 32px;
   padding-bottom: 2rem;
+}
+
+.tile {
+  justify-content: flex-start;
+}
+
+.text-info {
+
 }
 
 /* style for BANNER-START section */
 
 /* to overlap generic banners paddings due to header height and fixed position */
 .banner-start {
-  padding-top: 96px;
   padding-top: 6rem;
 }
 
-.banner-start .left-content{
+.banner-start .left-content{ /* check and refactor all left-content and right-content classes css for banners */
   width: 60%;
   overflow: hidden;
-  padding-left: 24px;
   padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .banner-start .left-content img {
@@ -97,27 +97,33 @@ nav span:not(:last-child) {
 }
 
 .banner-start .right-content {
-  padding-left: 24px;
-  padding-left: 2rem;
-  width: 30%;
+  padding-left: 1rem;
+}
+
+.banner-start .right-content h4 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .banner-start .right-content .button {
   background-color: #778899;
   color: white;
   border-radius: 5%;
-  padding: 8px 0px;
   padding: 0.5rem 0rem;
-  width: 100%
+  width: 100%;
 }
 
 /* style for BANNER-INFO section */
 
+.banner-info {
+  align-items: flex-start;
+}
+
 .banner-info .left-content {
   width: 60%;
   overflow: hidden;
-  padding-left: 24px;
   padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .banner-info .left-content img {
@@ -127,15 +133,29 @@ nav span:not(:last-child) {
 }
 
 .banner-info .left-content h2 {
-  padding-top: 32px;
   padding-top: 2rem;
-  padding-bottom: 24px;
   padding-bottom: 1.5rem;
 }
 
-.banner-info .left-content p:nth-child(0n+1) {
-  font-size: 2rem;
+.banner-info .left-content .signature {
+  padding: 2rem 0rem;
+  font-size: 0.5rem;
 }
+
+.banner-info .right-content {
+  width: 40%;
+  overflow: hidden;
+}
+
+.banner-info .right-content img {
+  max-width: 35%;
+  height: auto;
+  display: block;
+}
+
+
+
+
 
 
 
