@@ -1,4 +1,5 @@
-/* generic style to help layout - remove or comment */
+/* generic style to help layout - remove or comment at the end */
+
 div,
 header,
 nav,
@@ -8,7 +9,8 @@ section {
 
 /* GENERIC STYLES---------------------------------------------------------- */
 
-/* generic common style applied to all content as default */
+/* generic style applied to content as default to control font-size, paddings and to limit content width using desktop */
+
 html {
   /* root font-size */
   font-size: 16px;
@@ -23,7 +25,8 @@ html {
 }
 
 /* common display/layout properties and values shared by flexbox-containers */
-/* add CSS vendor prefixes through pleeease tool */
+/* added CSS vendor prefixes through pleeease tool */
+
 .flexbox-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,23 +41,29 @@ html {
           align-items: center;
 }
 
-/* MEDIA QUERIES STYLES---------------------------------------------------- */
+/* MEDIA QUERIES STYLES FOR MOBILE VERSION--------------------------------- */
 
-/* style for HEADER section including: logo and navigation */
+/* style for HEADER section including logo and navigation */
 
+/* fixed header and header properties */
 header {
+  height: 64px;
   height: 4rem;
   background-color: #778899;
   width: 100%;
   position: fixed;
+  z-index: 1;
 }
 
+/* center header content */
 header.flexbox-container {
   justify-content: center;
 }
 
 .logo {
+  height: 32px;
   height: 2rem;
+  padding-left: 24px;
   padding-left: 1.5rem;
 }
 
@@ -75,51 +84,101 @@ nav span:not(:last-child) {
 .banner {
   background-color: #d3d3d3;
   justify-content: center;
+  padding-top: 32px;
   padding-top: 2rem;
+  padding-bottom: 32px;
   padding-bottom: 2rem;
 }
 
-.tile {
-  justify-content: flex-start;
-  padding: 1rem;
-}
+/* common style applied to left-content from banner-start and banner-info*/
 
-.text-info {
-  width: 60%;
-  padding-left: 1rem;
-}
-
-.text-info p {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-/* style for BANNER-START section */
-
-/* to overlap generic banners paddings due to header height and fixed position */
-.banner-start {
-  padding-top: 6rem;
-}
-
-.banner-start .left-content{ /* check and refactor all left-content and right-content classes css for banners */
+.banner .left-content{
   width: 60%;
   overflow: hidden;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
-.banner-start .left-content img {
+/* common style applied to image and video inside left-content from banner-start, banner-info and banner-showcase */
+
+.banner .left-content img,
+.banner-showcase .left-content video {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-.banner-start .right-content {
+/* common style applied to right-content from banner-start and banner-info*/
+
+.banner .right-content {
   width: 40%;
+  overflow: hidden;
+}
+
+/* common style applied to image inside right-content from banner-info and banner-showcase */
+
+.banner .right-content img {
+  max-width: 35%;
+  height: auto;
+  display: block;
+}
+
+/* common style applied to upper-tile inside right-content from banner-info and banner-showcase */
+
+.banner .upper-tile {
+  padding-top: 0px;
+  padding-top: 0rem;
+}
+
+/* shared style by main headings h2 from banner-courses and banner-showcase */
+
+.banner-courses h2,
+.banner-showcase h2 {
+  text-align: center;
+  padding-bottom: 32px;
+  padding-bottom: 2rem;
+}
+
+/* common style applied to tiles from banner-info and banner-showcase */
+.tile {
+  justify-content: flex-start;
+  padding: 16px;
+  padding: 1rem;
+}
+
+/* common control for "text boxes" used in right-content of banner-start and inside tiles from banner-info and banner-showcase */
+.text-info {
+  width: 60%;
+  padding-left: 16px;
+  padding-left: 1rem;
+}
+
+.text-info p {
+  padding-top: 8px;
+  padding-top: 0.5rem;
+  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
+}
+
+/* shared aligns-items property to overlap generic .flexbox-container and place content at the top of container */
+/* applied over banner-info, banner-courses and banner-showcase */
+
+.positioning-containers-top {
+  align-items: flex-start;
+}
+
+/* style for BANNER-START section */
+
+/* to overlap generic banners paddings due to header height and fixed position */
+.banner-start {
+  padding-top: 96px;
+  padding-top: 6rem;
 }
 
 .banner-start .right-content h4 {
+  padding-top: 40px;
   padding-top: 2.5rem;
+  padding-bottom: 40px;
   padding-bottom: 2.5rem;
 }
 
@@ -127,74 +186,48 @@ nav span:not(:last-child) {
   background-color: #778899;
   color: white;
   border-radius: 5%;
+  padding: 8px 0px;
   padding: 0.5rem 0rem;
   width: 100%;
 }
 
 /* style for BANNER-INFO section */
 
-.banner-info .site-container {
-  align-items: flex-start;
-}
-
-.banner-info .left-content {
-  width: 60%;
-  overflow: hidden;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.banner-info .left-content img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 .banner-info .left-content h2 {
+  padding-top: 32px;
   padding-top: 2rem;
+  padding-bottom: 24px;
   padding-bottom: 1.5rem;
 }
 
 .banner-info .left-content .signature {
+  padding-top: 32px;
   padding-top: 2rem;
-  font-size: 0.5rem;
-}
-
-.banner-info .right-content {
-  width: 40%;
-  overflow: hidden;
-}
-
-.banner-info .right-content img {
-  max-width: 35%;
-  height: auto;
-  display: block;
-}
-
-.banner-info .upper-tile {
-  padding-top: 0rem;
 }
 
 /* style for BANNER-COURSES section */
 
-.banner-courses h2 {
-  text-align: center;
-  padding-bottom: 2rem;
-}
-
 .top-row {
+  padding-bottom: 16px;
   padding-bottom: 1rem;
-}
-
-.top-row,
-.bottom-row {
-  align-items: flex-start;
 }
 
 .course-tile {
   width: 32%;
   background-color: white;
   overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.course-tile h4 {
+  padding: 16px 0px;
+  padding: 1rem 0rem;
+}
+
+.course-tile p {
+  padding: 8px 0px;
+  padding: 0.5rem 0rem;
 }
 
 .course-tile img {
@@ -203,3 +236,10 @@ nav span:not(:last-child) {
 }
 
 /* style for BANNER-SHOWCASE section */
+
+.banner-showcase .left-content h4 {
+  padding-top: 24px;
+  padding-top: 1.5rem;
+  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
+}
