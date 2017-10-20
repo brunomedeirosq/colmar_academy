@@ -43,7 +43,7 @@ html {
 
 /* MEDIA QUERIES STYLES FOR MOBILE VERSION--------------------------------- */
 
-/* style for HEADER section including logo and navigation */
+/* style for HEADER (including logo and navigation) and FOOTER sections */
 
 /* fixed header and header properties */
 header {
@@ -55,8 +55,9 @@ header {
   z-index: 1;
 }
 
-/* center header content */
-header.flexbox-container {
+/* center header and footer content */
+header.flexbox-container,
+footer.flexbox-container {
   justify-content: center;
 }
 
@@ -75,6 +76,21 @@ nav {
 being introduced CSS Selectors Level 3 --> check and implement compatibility through Modernizr */
 nav span:not(:last-child) {
   padding-right: 1rem;
+}
+
+/* style for FOOTER section */
+/* Attention: content is placed top due to positioning-top selector - section for generic BANNERS style */
+footer {
+  height: 80px;
+  height: 5rem;
+  background-color: #778899;
+  padding-top: 16px;
+  padding-top: 1rem;
+}
+
+footer p {
+  padding-left: 24px;
+  padding-left: 1.5rem;
 }
 
 /* main sections */
@@ -161,9 +177,9 @@ nav span:not(:last-child) {
 }
 
 /* shared aligns-items property to overlap generic .flexbox-container and place content at the top of container */
-/* applied over banner-info, banner-courses and banner-showcase */
+/* applied over banner-info, banner-courses, banner-showcase and footer */
 
-.positioning-containers-top {
+.positioning-top {
   align-items: flex-start;
 }
 
