@@ -14,6 +14,14 @@ html {
   font-size: 16px;
 }
 
+.site-container {
+  width: 1240px;
+}
+
+.site-container-courses {
+  width: 1096px;
+}
+
 /* common display/layout properties and values shared by flexbox-containers */
 /* add CSS vendor prefixes through pleeease tool */
 .flexbox-container {
@@ -41,6 +49,10 @@ header {
   position: fixed;
 }
 
+header.flexbox-container {
+  justify-content: center;
+}
+
 .logo {
   height: 2rem;
   padding-left: 1.5rem;
@@ -62,18 +74,24 @@ nav span:not(:last-child) {
 
 .banner {
   background-color: #d3d3d3;
-  width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
 .tile {
   justify-content: flex-start;
+  padding: 1rem;
 }
 
 .text-info {
+  width: 60%;
+  padding-left: 1rem;
+}
 
+.text-info p {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 /* style for BANNER-START section */
@@ -97,7 +115,7 @@ nav span:not(:last-child) {
 }
 
 .banner-start .right-content {
-  padding-left: 1rem;
+  width: 40%;
 }
 
 .banner-start .right-content h4 {
@@ -115,7 +133,7 @@ nav span:not(:last-child) {
 
 /* style for BANNER-INFO section */
 
-.banner-info {
+.banner-info .site-container {
   align-items: flex-start;
 }
 
@@ -138,7 +156,7 @@ nav span:not(:last-child) {
 }
 
 .banner-info .left-content .signature {
-  padding: 2rem 0rem;
+  padding-top: 2rem;
   font-size: 0.5rem;
 }
 
@@ -153,19 +171,35 @@ nav span:not(:last-child) {
   display: block;
 }
 
-
-
-
-
-
-
-
+.banner-info .upper-tile {
+  padding-top: 0rem;
+}
 
 /* style for BANNER-COURSES section */
 
+.banner-courses h2 {
+  text-align: center;
+  padding-bottom: 2rem;
+}
 
+.top-row {
+  padding-bottom: 1rem;
+}
 
+.top-row,
+.bottom-row {
+  align-items: flex-start;
+}
 
+.course-tile {
+  width: 32%;
+  background-color: white;
+  overflow: hidden;
+}
 
+.course-tile img {
+  width: 100%;
+  height: auto;
+}
 
 /* style for BANNER-SHOWCASE section */
