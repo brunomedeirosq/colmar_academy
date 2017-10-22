@@ -6,7 +6,7 @@ nav,
 section,
 span,
 a {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 /* GENERIC STYLES---------------------------------------------------------- */
@@ -45,11 +45,19 @@ html {
 
 /* MEDIA QUERIES STYLES FOR MOBILE VERSION--------------------------------- */
 
+/* generic selector to hide mobile content */
+
 .mobile {
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
+/* selector to hide mobile pictures version for banner-info */
+
+.banner.banner-info .right-content .tile img.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
 
 .desktop {
   display: none;
@@ -78,7 +86,7 @@ header span {
 }
 
 header span:hover {
-  background-color: hsla(225, 100%, 25%, 0.3);
+  background-color: #d3d3d3;
   border-radius: 3.2px;
   border-radius: 0.2rem;
 }
@@ -130,12 +138,102 @@ header span:hover {
 
 /* banner-info */
 
+.banner.banner-info {
+  padding: 16px 0px 0px 0px;
+}
+
 .banner.banner-info .right-content {
   width: 100%;
 }
 
+.banner.banner-info .right-content .tile {
+  flex-direction: column;
+  padding-top: 0px;
+  padding-top: 0rem;
+  padding-bottom: 32px;
+  padding-bottom: 2rem;
+  background-color: white;
+}
+
+.banner.banner-info .right-content .text-info {
+  padding: 16px 0px 0px 0px;
+  padding: 1rem 0rem 0rem 0rem;
+  width: 100%;
+}
+
+.banner.banner-info .right-content .tile img {
+  max-width: 100%;
+}
+
+.banner.banner-info .right-content .tile img.desktop {
+  display: none;
+}
+
+.banner.banner-info .right-content .tile img.mobile {
+  display: block;
+}
+
+.banner.banner-info .text-info h4,
+.banner.banner-info .text-info p,
+.banner.banner-info .text-info a {
+  margin-left: 16px;
+  margin-left: 1rem;
+  margin-right:16px;
+  margin-right: 1rem;
+}
+
+/* banner-courses */
+
+.banner.banner-courses {
+  background-color: white;
+  padding-left: 16px;
+  padding-left: 1rem;
+  padding-right: 16px;
+  padding-right: 1rem;
+}
+
+.banner.banner-courses .courses-mobile {
+  flex-direction: column;
+}
+
+/* select all child div, inside parent div .courses-mobile and apply to all, except the last one, margin-bottom property */
+.banner.banner-courses .courses-mobile div:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.banner.banner-courses .courses {
+  display: flex;
+  padding: 16px;
+  padding: 1rem;
+  background-color: #d3d3d3;
+  transition: background-color 300ms linear 150ms;
+}
+
+.banner.banner-courses .courses:hover {
+  background-color: hsla(260, 75%, 5%, 0.3);
+}
+
+/* banner-showcase */
+
+.banner.banner-showcase .left-content {
+  width: 100%;
+  padding: 0px;
+  padding: 0rem;
+}
+
+.banner.banner-showcase .left-content .showcase-text {
+  display: none;
+}
+
+/* footer */
+
+footer nav {
+  display: none;
+}
 
 }
+
+/* END OF MEDIA QUERIES STYLES FOR MOBILE VERSION-------------------------- */
 
 /* style for HEADER (including logo and navigation) and FOOTER sections */
 
@@ -177,7 +275,7 @@ nav span:not(:last-child) {
 footer {
   height: 80px;
   height: 5rem;
-  background-color: #778899;
+  background-color: white;
   padding-top: 16px;
   padding-top: 1rem;
 }
@@ -192,7 +290,7 @@ footer p {
 /* generic style for BANNERS section */
 
 .banner {
-  background-color: #d3d3d3;
+  background-color: white;
   justify-content: center;
   padding-top: 32px;
   padding-top: 2rem;
@@ -254,6 +352,11 @@ footer p {
   justify-content: flex-start;
   padding: 16px;
   padding: 1rem;
+  transition: background-color 300ms linear 150ms;
+}
+
+.tile:hover {
+  background-color: #d3d3d3;
 }
 
 /* common control for "text boxes" used in right-content of banner-start and inside tiles from banner-info and banner-showcase */
@@ -281,6 +384,7 @@ footer p {
 
 /* to overlap generic banners paddings due to header height and fixed position */
 .banner-start {
+  background-color: #d3d3d3;
   padding-top: 96px;
   padding-top: 6rem;
 }
@@ -295,17 +399,17 @@ footer p {
 .banner-start .right-content .button {
   display: flex;
   justify-content: center;
-  padding: 8px 0px;
-  padding: 0.5rem 0rem;
+  padding: 16px 0px;
+  padding: 1rem 0rem;
   color: white;
-  background-color: hsla(225, 50%, 50%, 0.2);
+  background-color: hsla(260, 75%, 5%, 0.55);
   transition: background-color 300ms linear 150ms;
   border-radius: 3.2px;
   border-radius: 0.2rem;
 }
 
 .banner-start .right-content .button:hover {
-  background-color: hsla(225, 100%, 25%, 0.3);
+  background-color: hsla(260, 75%, 5%, 0.3);
   border-radius: 3.2px;
   border-radius: 0.2rem;
 }
@@ -325,6 +429,11 @@ footer p {
 }
 
 /* style for BANNER-COURSES section */
+
+.banner-courses {
+  background-color: #d3d3d3;
+  border: 0.5px solid #d3d3d3;
+}
 
 .top-row {
   padding-bottom: 16px;
