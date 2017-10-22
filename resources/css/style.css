@@ -3,7 +3,9 @@
 div,
 header,
 nav,
-section {
+section,
+span,
+a {
   border: 1px solid black;
 }
 
@@ -43,13 +45,105 @@ html {
 
 /* MEDIA QUERIES STYLES FOR MOBILE VERSION--------------------------------- */
 
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+.desktop {
+  display: none;
+}
+
+.mobile {
+  display: flex;
+  width: 100%;
+}
+
+/* header style for mobile version */
+
+header .flexbox-container.icons-bar {
+  width: 60%;
+}
+
+header span {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transition: background-color 300ms linear 150ms;
+  border-radius: 3.2px;
+  border-radius: 0.2rem;
+  height: 32px;
+  height: 2rem;
+}
+
+header span:hover {
+  background-color: hsla(225, 100%, 25%, 0.3);
+  border-radius: 3.2px;
+  border-radius: 0.2rem;
+}
+
+/* main sections */
+
+/* banner-start */
+
+.banner.banner-start {
+  padding-top: 64px;
+  padding-top: 4rem;
+}
+
+.banner.banner-start .flexbox-container {
+  flex-direction: column;
+}
+
+.banner.banner-start .left-content {
+  padding-left: 0px;
+  padding-left: 0rem;
+  padding-right: 0px;
+  padding-right: 0rem;
+  width: 100%;
+}
+
+.banner.banner-start .right-content {
+  padding-top: 32px;
+  padding-top: 2rem;
+  width: 100%;
+}
+
+.banner.banner-start .text-info {
+  padding-left: 0px;
+  padding-left: 0rem;
+  padding-right: 0px;
+  padding-right: 0rem;
+  width: 100%;
+}
+
+.banner.banner-start .text-info h2,
+.banner.banner-start .text-info h4,
+.banner.banner-start .right-content .text-info .button {
+  margin-left: 16px;
+  margin-left: 1rem;
+  margin-right:16px;
+  margin-right: 1rem;
+  text-align: left;
+}
+
+/* banner-info */
+
+.banner.banner-info .right-content {
+  width: 100%;
+}
+
+
+}
+
 /* style for HEADER (including logo and navigation) and FOOTER sections */
 
 /* fixed header and header properties */
 header {
   height: 64px;
   height: 4rem;
-  background-color: #778899;
+  background-color: white;
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -192,19 +286,28 @@ footer p {
 }
 
 .banner-start .right-content h4 {
-  padding-top: 40px;
-  padding-top: 2.5rem;
-  padding-bottom: 40px;
-  padding-bottom: 2.5rem;
+  padding-top: 32px;
+  padding-top: 2rem;
+  padding-bottom: 24px;
+  padding-bottom: 1.5rem;
 }
 
 .banner-start .right-content .button {
-  background-color: #778899;
-  color: white;
-  border-radius: 5%;
+  display: flex;
+  justify-content: center;
   padding: 8px 0px;
   padding: 0.5rem 0rem;
-  width: 100%;
+  color: white;
+  background-color: hsla(225, 50%, 50%, 0.2);
+  transition: background-color 300ms linear 150ms;
+  border-radius: 3.2px;
+  border-radius: 0.2rem;
+}
+
+.banner-start .right-content .button:hover {
+  background-color: hsla(225, 100%, 25%, 0.3);
+  border-radius: 3.2px;
+  border-radius: 0.2rem;
 }
 
 /* style for BANNER-INFO section */
